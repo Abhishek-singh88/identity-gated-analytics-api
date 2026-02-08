@@ -120,6 +120,13 @@ Returns:
 ## Full Example (Dev Bypass)
 
 ### Step 1: Challenge
+
+```bash
+npm run dev
+```
+
+- Then in other terminal
+
 ```bash
 curl -s -X POST http://localhost:3000/api/v1/auth/challenge \
   -H "Content-Type: application/json" \
