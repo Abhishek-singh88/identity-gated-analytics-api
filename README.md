@@ -125,6 +125,9 @@ curl -s -X POST http://localhost:3000/api/v1/auth/challenge \
   -H "Content-Type: application/json" \
   -d '{"walletAddress":"inj1youraddress"}'
 ```
+![Demo](./public/1.png)
+
+
 
 ### Step 2: Verify Identity (dev bypass)
 ```bash
