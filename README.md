@@ -141,6 +141,8 @@ curl -s -X POST http://localhost:3000/api/v1/verify-identity \
     "nftId":"1"
   }'
 ```
+![Demo](./public/2.png)
+
 
 Copy `accessToken` from the response.
 
@@ -149,6 +151,8 @@ Copy `accessToken` from the response.
 curl -s "http://localhost:3000/api/v1/analytics/advanced-orderbook?marketId=MARKET_ID" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+
+![Demo](./public/3.png)
 
 ## How To Get a Market ID
 Use the Injective indexer API to list markets:
