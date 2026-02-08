@@ -1,0 +1,27 @@
+{
+  "name": "identity-gated-analytics-api",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && cp .env dist/.env",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist node_modules && npm install"
+  },
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "@fastify/jwt": "^10.0.0",
+    "@fastify/cors": "^10.0.0",
+    "@fastify/rate-limit": "^10.0.0",
+    "@injectivelabs/sdk-ts": "^1.14.7",
+    "@injectivelabs/networks": "^1.17.6",
+    "ioredis": "^5.4.1",
+    "ethers": "^6.12.0",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.5"
+  }
+}

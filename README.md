@@ -36,3 +36,4 @@ npm run dev
 - `INJ_NETWORK` supports `mainnet`, `testnet`, and `devnet`.
 - Tier rules: `nftHolder` for verified NFT owners, `premium` for the `n1nj4` class.
 - Dev testing without NFTs: set `DEV_BYPASS_NFT=true` and optionally `DEV_BYPASS_NFT_TIER=premium`.
+- Dev testing without signatures: set `DEV_BYPASS_SIGNATURE=true` (also set `DEV_BYPASS_NFT=true`).
