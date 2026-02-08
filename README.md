@@ -125,8 +125,7 @@ curl -s -X POST http://localhost:3000/api/v1/auth/challenge \
   -H "Content-Type: application/json" \
   -d '{"walletAddress":"inj1youraddress"}'
 ```
-![Demo](./public/1.png)
-
+![Challenge](./public/1.png)
 
 
 ### Step 2: Verify Identity (dev bypass)
@@ -134,15 +133,14 @@ curl -s -X POST http://localhost:3000/api/v1/auth/challenge \
 curl -s -X POST http://localhost:3000/api/v1/verify-identity \
   -H "Content-Type: application/json" \
   -d '{
-    "walletAddress":"inj1testaddress",
+    "walletAddress":"inj1youraddress",
     "signature":"dev-bypass",
     "message":"PASTE_MESSAGE_HERE",
     "nftClassId":"n1nj4",
     "nftId":"1"
   }'
 ```
-![Demo](./public/2.png)
-
+![Verify Identity](./public/2.png)
 
 Copy `accessToken` from the response.
 
@@ -151,8 +149,21 @@ Copy `accessToken` from the response.
 curl -s "http://localhost:3000/api/v1/analytics/advanced-orderbook?marketId=MARKET_ID" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+![Advanced Orderbook](./public/3.png)
 
-![Demo](./public/3.png)
+### Step 4: Market Intelligence (premium)
+```bash
+curl -s "http://localhost:3000/api/v1/analytics/market-intelligence?marketIds=MARKET_ID" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+![Market Intelligence](./public/4.png)
+
+### Step 5: Personalized Signals
+```bash
+curl -s "http://localhost:3000/api/v1/analytics/personalized-signals?marketId=MARKET_ID" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+![Personalized Signals](./public/5.png)
 
 ## How To Get a Market ID
 Use the Injective indexer API to list markets:
@@ -199,10 +210,4 @@ src/
 - JWTs expire after 24 hours.
 - Nonces are stored in Redis with short TTL to prevent replay.
 - Signature verification is required in production (dev bypass only).
-
-## Demo Tips (Contest)
-- Show challenge → verify → analytics flow.
-- Explain that `x/nft` verifies real ownership on-chain.
-- Highlight computed metrics (not raw orderbook pass-through).
-- Mention tiered access and rate limits as product logic.
 
